@@ -4,16 +4,16 @@ pipeline {
         stage("Parallel Execution"){
 	    steps{
 		   parallel{
-		     a:{
+		         a:{
 			   bat"mvn clean"
-			 }
+			 },
 			 b:{
 			   bat"mvn test"
-			 }
+			 },
 			 c:{
 			   bat"mvn package"
 			 }
-		   }
+		       }
 		}
 	   }
 	stage("Consolidate Results"){
